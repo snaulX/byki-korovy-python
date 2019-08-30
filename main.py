@@ -7,10 +7,22 @@ repetition = False #указывает может ли повторятся ци
 def viewsettings():
     print("Количество цифр в загадываемом числе: ", count)
     print("Генерация числа компьютером: ", ai)
-    print("Могут ли повторятся цифры в загадываемом числе: ", repetetion)
+    print("Могут ли повторятся цифры в загадываемом числе: ", repetition)
 def settings():
-    #word = input("""Введите название параметра, который Вы хотите изменить:
-#""")
+    word = input("""Введите название параметра, который Вы хотите изменить:
+    count - меняет количество цифр в загадываемом слове
+    ai - генерирует число компьютер или человек загадывает сам
+    repeat - могут ли повторятся цифры в загадываемом числе
+    """)
+    if word == "count":
+        count = int(input("Введите количетсво цифр в загадываемом слове: "))
+    elif word == "ai":
+        ai = bool(input("Введите True если число генерируется само или False если нет: "))
+    elif word == "repeat":
+        repetition = bool(input("Введите True если цифры могут повторятся или False если нет: "))
+    else:
+        print("ERROR: parametr by name '%s' not found. Please try again" % word)
+        settings()
 def play():
     pass
 
