@@ -24,10 +24,28 @@ def settings():
     elif word == "back":
         pass
     else:
-        print("ERROR: parametr by name '%s' not found. Please try again" % word)
+        print("ERROR: parameter by name '%s' not found. Please try again" % word)
         settings()
 def play():
-    pass
+    print("Заданные настройки:")
+    viewsettings()
+    print()
+    if ai:
+        number = list(str(randint(0, 10)))
+    else:
+        number = list(input("Введите загадываемое число: "))
+        if len(number) != count:
+            print("Количество цифр в загадываемом числе не соответсвует настройкам!")
+            return
+        if repetition:
+            for i in number:
+                if number.count(i) > 1:
+                    print("Цифра %s повторяется!" % i)
+                    return
+    game = True
+    while game:
+        pass
+        # numb = list(input("Введите число: "))        
 
 print("Быки-Коровы, Александр Гунгер 2019")
 print("  ------------------------------  ")
