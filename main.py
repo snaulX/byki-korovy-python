@@ -13,6 +13,7 @@ def settings():
     count - меняет количество цифр в загадываемом слове
     ai - генерирует число компьютер или человек загадывает сам
     repeat - могут ли повторятся цифры в загадываемом числе
+    back - если хотите назад
     """)
     if word == "count":
         count = int(input("Введите количетсво цифр в загадываемом слове: "))
@@ -20,6 +21,8 @@ def settings():
         ai = bool(input("Введите True если число генерируется само или False если нет: "))
     elif word == "repeat":
         repetition = bool(input("Введите True если цифры могут повторятся или False если нет: "))
+    elif word == "back":
+        pass
     else:
         print("ERROR: parametr by name '%s' not found. Please try again" % word)
         settings()
