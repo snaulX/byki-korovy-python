@@ -31,7 +31,16 @@ def play():
     viewsettings()
     print()
     if ai:
-        number = list(str(randint(0, 10)))
+        number = list()
+        for i in range(0, count):
+            if not repetition:
+                while True:
+                    e = str(randint(0, 9))
+                    if not e in number:
+                        break
+            else:
+                e = str(randint(0, 9))      
+            number.append(e)
     else:
         number = list(input("Введите загадываемое число: "))
         if len(number) != count:
