@@ -44,8 +44,25 @@ def play():
                     return
     game = True
     while game:
-        pass
-        # numb = list(input("Введите число: "))        
+        numb = list(input("Введите число: "))
+        if len(numb) != len(number):
+            print("Количество цифр в вводимом числе не равно количетсву цифр в загадываемом числе!")
+            continue
+        cows = 0
+        byki = 0
+        for i in numb:
+            try:
+                if numb.index(i) == number.index(i):
+                    byki = byki + 1
+                else:
+                    cows = cows + 1
+            except ValueError:
+                pass
+        if byki == count:
+            print("Вы угадали число!!!")
+            return
+        else:
+            print("Коровы: {0}. Быки: {1}".format(cows, byki))
 
 print("Быки-Коровы, Александр Гунгер 2019")
 print("  ------------------------------  ")
