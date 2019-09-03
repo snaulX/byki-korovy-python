@@ -1,5 +1,6 @@
 from random import randint
 
+global count, ai, repetition
 count = 4 #количество цифр в загадываемом слове
 ai = True #если True то число генерируется самостоятельно, иначе вводится человеком
 repetition = False #указывает может ли повторятся цифра в загадываемом числе
@@ -26,6 +27,7 @@ def settings():
     else:
         print("ERROR: parameter by name '%s' not found. Please try again" % word)
         settings()
+    print(count)
 def play():
     print("Заданные настройки:")
     viewsettings()
@@ -54,6 +56,9 @@ def play():
     game = True
     while game:
         numb = list(input("Введите число: "))
+        if numb == ['e', 'x', 'i', 't']:
+            print("Правильным числом было ", number)
+            return
         if len(numb) != len(number):
             print("Количество цифр в вводимом числе не равно количетсву цифр в загадываемом числе!")
             continue
